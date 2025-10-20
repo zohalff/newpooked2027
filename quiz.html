@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Classroom — Quizzes</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="classroom.html" class="nav-link">Open Classroom</a>
+        <a href="quiz.html" class="nav-link active">Quizzes</a>
+        <a href="project.html" class="nav-link">Project Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel split">
+      <section class="left">
+        <h2>Quizzes</h2>
+        <div class="controls">
+          <button id="newQuizBtn" class="btn">+ New Quiz</button>
+          <button id="exportQuizBtn" class="btn outline">Export as PNG</button>
+          <label class="filelabel btn outline">Import <input id="importQuizFile" type="file" accept=".png,.json,image/*" class="file"></label>
+        </div>
+        <div id="quizzesList" class="list"></div>
+      </section>
+
+      <section class="right" id="quizEditorArea">
+        <h3>Edit / Play Quiz</h3>
+        <input id="quizTitle" placeholder="Quiz title" type="text">
+        <textarea id="quizDesc" placeholder="Optional description"></textarea>
+        <div id="questionsEditor"></div>
+        <div class="actions">
+          <button id="saveQuizBtn" class="btn primary">Save</button>
+          <button id="addQuestionBtn" class="btn outline">+ Add Question</button>
+        </div>
+
+        <hr>
+        <h4>Play</h4>
+        <div id="quizPlayer"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="small muted">Quizzes are editable and exportable. Export to PNG embeds the quiz JSON so it can be re-imported later.</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    markActiveNav();
+    quiz_init();
+  </script>
+</body>
+</html>

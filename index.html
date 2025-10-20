@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Classroom — Home</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="classroom.html" class="nav-link">Open Classroom</a>
+        <a href="quiz.html" class="nav-link">Quizzes</a>
+        <a href="project.html" class="nav-link">Project Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="hero-left">
+      <h1>Pocket Classroom — Lightweight Online Classroom</h1>
+      <p class="lead">Create lessons, add videos, assignments, interactive quizzes and simple chat — all saved locally in your browser and exportable as image or JSON for backup.</p>
+      <div class="buttons">
+        <a class="btn primary" href="classroom.html">Open Classroom</a>
+        <a class="btn outline" href="project.html">Project Details</a>
+      </div>
+
+      <div class="features row">
+        <div class="card">
+          <h4>Lessons</h4>
+          <p class="muted">Add, edit or remove lessons. Each lesson can have video, description and assignments.</p>
+        </div>
+        <div class="card">
+          <h4>Quizzes</h4>
+          <p class="muted">Multiple-choice quizzes per lesson and a standalone quiz page with scoring and feedback.</p>
+        </div>
+        <div class="card">
+          <h4>Export & Backup</h4>
+          <p class="muted">Export quizzes or lessons as .json or embed into a PNG file for easy transfer.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="panel">
+        <h3>Quick actions</h3>
+        <div class="actions">
+          <a class="btn small" href="library.html">Open Library</a>
+          <a class="btn small" href="quiz.html">Take a Quiz</a>
+          <a class="btn small" href="classroom.html">Start Classroom</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Pocket Classroom — Built with ❤️</div>
+      <div class="small muted">Works offline (PWA) — try installing to your device.</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // mark active nav
+    markActiveNav();
+  </script>
+</body>
+</html>

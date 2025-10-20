@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Classroom — Library</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link active">Library</a>
+        <a href="classroom.html" class="nav-link">Open Classroom</a>
+        <a href="quiz.html" class="nav-link">Quizzes</a>
+        <a href="project.html" class="nav-link">Project Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel split">
+      <section class="left">
+        <div class="section-header">
+          <h2>Your Lessons</h2>
+          <div class="controls">
+            <button id="newLessonBtn" class="btn">+ New Lesson</button>
+            <button id="exportLessonsBtn" class="btn outline">Export JSON</button>
+            <label class="filelabel btn outline">Import <input id="importLessons" type="file" accept=".json" class="file"></label>
+            <button id="clearLessonsBtn" class="btn danger">Clear All</button>
+          </div>
+        </div>
+
+        <div id="lessonsList" class="list"></div>
+      </section>
+
+      <section class="right">
+        <h3>Edit Lesson</h3>
+        <input id="lessonTitle" type="text" placeholder="Lesson title">
+        <input id="lessonVideo" type="text" placeholder="Optional video URL (YouTube / mp4)">
+        <textarea id="lessonDesc" placeholder="Lesson description"></textarea>
+        <div class="actions">
+          <button id="saveLessonBtn" class="btn primary">Save</button>
+          <button id="deleteLessonBtn" class="btn danger">Delete</button>
+          <button id="addLessonQuizBtn" class="btn outline">Add Quiz</button>
+        </div>
+
+        <hr>
+        <h4>Lesson Quizzes</h4>
+        <div id="lessonQuizzes"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="small muted">Lessons are stored locally in your browser (localStorage). Export to back up or transfer.</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    markActiveNav();
+    library_init();
+  </script>
+</body>
+</html>

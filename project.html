@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Classroom — Project Details</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="favicon-32x32.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="classroom.html" class="nav-link">Open Classroom</a>
+        <a href="quiz.html" class="nav-link">Quizzes</a>
+        <a href="project.html" class="nav-link active">Project Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel">
+      <h2>Project Details</h2>
+      <p class="muted">This project is a minimal offline-capable classroom demo. Data is stored locally; quizzes and lessons can be exported/imported as JSON or embedded in PNG files for convenient transfer.</p>
+
+      <h3>Features</h3>
+      <ul>
+        <li>Multi-page structure: Home, Library, Open Classroom, Quizzes, Project Details</li>
+        <li>Local storage for lessons & quizzes</li>
+        <li>Export/import JSON and PNG-embedded data</li>
+        <li>Service Worker for offline usage</li>
+        <li>Mobile-friendly, touch-first controls</li>
+      </ul>
+
+      <h3>How the PNG export works</h3>
+      <p class="muted">A small marker and base64 JSON are appended to a valid PNG file. Most image viewers ignore trailing bytes so the file remains an image while carrying your quiz data inside.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="small muted">If you'd like, I can convert this to a single-page app or wire up a server-side sync option.</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>markActiveNav();</script>
+</body>
+</html>

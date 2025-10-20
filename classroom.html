@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pocket Classroom — Open Classroom</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="classroom.html" class="nav-link active">Open Classroom</a>
+        <a href="quiz.html" class="nav-link">Quizzes</a>
+        <a href="project.html" class="nav-link">Project Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel">
+      <h2>Open Classroom</h2>
+      <p class="muted">Launch a lesson for live-style viewing. Notes and chat saved locally per session.</p>
+
+      <div class="classroom-grid">
+        <div class="classroom-left">
+          <label>Choose lesson</label>
+          <select id="classLessonSelect"></select>
+          <div id="lessonView" class="lesson-view"></div>
+        </div>
+
+        <aside class="classroom-right">
+          <h4>Session Chat</h4>
+          <div id="sessionChat" class="chat-window"></div>
+          <input id="chatInput" type="text" placeholder="Type message and press Enter">
+          <div class="small muted">Session chat is stored locally; export session if you want backup.</div>
+
+          <hr>
+          <div class="actions">
+            <button id="exportSessionBtn" class="btn outline">Export Session JSON</button>
+            <button id="clearSessionBtn" class="btn danger">Clear Session</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="small muted">Use the Open Classroom to present lessons locally; works on mobile and offline.</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    markActiveNav();
+    classroom_init();
+  </script>
+</body>
+</html>
