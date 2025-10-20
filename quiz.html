@@ -4,18 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pocket Classroom — Quizzes</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <!-- Use relative paths (no leading slash) so files load on GitHub Pages under a project path -->
+  <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="index.html">Pocket<span class="accent">Classroom</span></a>
+      <a class="brand" href="./index.html">Pocket<span class="accent">Classroom</span></a>
       <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="library.html" class="nav-link">Library</a>
-        <a href="classroom.html" class="nav-link">Open Classroom</a>
-        <a href="quiz.html" class="nav-link active">Quizzes</a>
-        <a href="project.html" class="nav-link">Project Details</a>
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./library.html" class="nav-link">Library</a>
+        <a href="./classroom.html" class="nav-link">Open Classroom</a>
+        <a href="./quiz.html" class="nav-link active">Quizzes</a>
+        <a href="./project.html" class="nav-link">Project Details</a>
       </nav>
     </div>
   </header>
@@ -55,10 +56,17 @@
     </div>
   </footer>
 
-  <script src="assets/app.js"></script>
+  <!-- Load app script using relative path so it resolves under project pages on GitHub Pages -->
+  <script src="./assets/app.js"></script>
   <script>
-    markActiveNav();
-    quiz_init();
+    // make sure app.js loaded before calling functions defined in it
+    if (typeof markActiveNav === 'function') {
+      markActiveNav();
+      if (typeof quiz_init === 'function') quiz_init();
+    } else {
+      // If app.js failed to load, log a helpful error and avoid throwing ReferenceError
+      console.error('app.js failed to load or did not define markActiveNav/quiz_init. Check the console network tab for 404s.');
+    }
   </script>
 </body>
 </html>
